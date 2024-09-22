@@ -2,7 +2,8 @@
 
 pthread_t       reading_thread;
 int             client_socket;
-//Add your global variables here
+
+
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
 
@@ -167,7 +168,7 @@ void get_request()
 
 void* read_continously(void* unused)
 {
-    (void) unused; //Mark variable as used for the compiler :-)
+    
 
     while (1) {
         // Lock the mutex to ensure thread safety

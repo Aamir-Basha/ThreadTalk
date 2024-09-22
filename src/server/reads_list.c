@@ -4,11 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//! HINT: when designing the reads_list_element remember to
-//! HINT: keep the critical region as small as necessary.
+
 typedef struct reads_list_element
 {
-    //! HINT: something is missing here
+
     unsigned int    client_number;
     struct reads_list_element* next;
     struct reads_list_element* previous;
@@ -21,8 +20,7 @@ typedef struct reads_list_element
 
 reads_list_element_t* head = NULL;
 
-//! HINT: maybe global synchronization variables are needed
-//Using a write-read mutex prbably better than a normal Mutex...
+
 //pthread_mutex_t rw_list_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_rwlock_t rw_list_lock = PTHREAD_RWLOCK_INITIALIZER;
 
@@ -30,7 +28,7 @@ pthread_rwlock_t rw_list_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 int reads_list_insert_element(unsigned int client_number)
 {
-    //! HINT: synchronization is needed in this function   
+
      
 
     //! create new element
@@ -76,15 +74,7 @@ int reads_list_insert_element(unsigned int client_number)
 
 //-----------------------------------------------------------------------------
 
-sem_t* reads_list_get_reader_semaphore(unsigned int client_number)
-{
-    (void) client_number; //! Please remove this when you implement this function
-    //! please implement this function
-    return NULL; //! Please select a proper return value
-    //Fehlt... 
-}
 
-//-----------------------------------------------------------------------------
 
 void reads_list_increment_all() {
 

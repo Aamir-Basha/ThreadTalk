@@ -31,8 +31,7 @@ uint16_t get_port_number() {
 unsigned int    client_number_count = 0;
 
 
-//! HINT: maybe global synchronization variables are needed
-//! HINT: but try to keep the critical region as small as possible
+
 
 pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
 
@@ -99,7 +98,7 @@ int handshake(int file_descriptor)
 
 void* handle_connection(void* socket)
 {
-    //! HINT: Synchronization is needed in this function
+    
     int file_descriptor = *(int*)socket;
     free(socket); // can also be freed when thread exits
 

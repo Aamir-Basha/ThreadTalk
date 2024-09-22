@@ -10,11 +10,11 @@
 #include <string.h>
 #include <time.h>
 
-//! HINT: when designing the ring_buffer_element remember to
-//! HINT: keep the critical region as small as necessary.
+
+
 typedef struct ring_buffer_element
 {
-    //! HINT: something is missing here
+
     char text[MAX_MESSAGE_LENGTH];
     int            reader_counter;
 

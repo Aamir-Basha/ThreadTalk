@@ -1,0 +1,60 @@
+Multi-threaded Server-Client Communication Project
+Overview
+This project demonstrates a multi-threaded server-client communication model implemented in C. The system allows multiple clients to connect concurrently to a server, facilitating bi-directional communication using GET and SET requests. The server and clients use sockets for network communication, and synchronization mechanisms (such as mutexes and threads) are applied to ensure data consistency and thread safety.
+
+Features
+Multi-threading: Each client connection is handled by a dedicated thread on the server, ensuring efficient, simultaneous handling of multiple client connections.
+Socket Programming: The server and client communicate via TCP sockets, establishing a stable connection for message exchange.
+Synchronization: Mutex locks are used to ensure thread-safe operations when accessing shared resources (e.g., client number counters, message buffers).
+Custom Handshake: Upon connection, the server and client exchange a handshake message to establish the communication protocol.
+GET/SET Requests:
+SET: Clients can send messages to the server, which stores them in a ring buffer.
+GET: Clients can retrieve the most recent message stored in the buffer.
+Robust Error Handling: Both the client and server handle errors (e.g., connection issues, invalid inputs) gracefully, ensuring smooth operation.
+Ring Buffer Management: The server utilizes a ring buffer to store client messages, efficiently handling data read and write operations.
+
+Getting Started
+Prerequisites
+A Unix-based system (e.g., Linux, macOS) with GCC installed.
+Basic knowledge of C programming, socket programming, and multi-threading concepts.
+Network access for client-server communication.
+The client connects to the server at 127.0.0.1 and initiates communication with a handshake. After the connection is established, the client can send GET or SET requests to interact with the server.
+
+Server Workflow
+Initialization: The server initializes a socket and listens for incoming client connections.
+Handshake: Upon a successful connection, the server performs a handshake with the client.
+Thread Handling: Each client is assigned a thread to manage requests concurrently.
+
+Request Handling:
+A GET request retrieves the latest message from the ring buffer.
+A SET request stores a new message in the ring buffer.
+Graceful Shutdown: Clients can disconnect at any time, and the server releases resources after handling each client.
+
+Client Workflow
+Connection: The client connects to the server and sends a handshake message.
+Message Sending: The client can either:
+Send a SET request to store a message in the server.
+Send a GET request to retrieve a message from the server.
+Threading: The client uses a separate thread to continuously read from the server.
+Graceful Shutdown: Clients can terminate the connection by handling signals, ensuring clean disconnection.
+
+
+Key Concepts
+Multi-threading with pthread: Efficiently handling multiple client connections using POSIX threads.
+Mutexes for Synchronization: Ensuring thread-safe access to shared resources like the ring buffer and client counters.
+Socket Programming: Creating a stable TCP connection between the client and server, managing data transmission across the network.
+Ring Buffer for Message Storage: Implementing a circular buffer for managing client messages efficiently.
+
+
+Skills Demonstrated
+Advanced C programming with an emphasis on system-level programming.
+Experience with multi-threading and synchronization (mutexes, threads).
+Proficiency in socket programming for creating client-server applications.
+Error handling and resource management in concurrent programs.
+Application of data structures like ring buffers in real-world scenarios.
+
+
+Future Enhancements
+Encryption: Implementing secure communication between the client and server using SSL/TLS.
+Scalability: Enhancing the server to handle more clients with improved load balancing.
+Advanced Request Types: Adding more request types (e.g., DELETE, UPDATE) for a richer communication protocol.

@@ -1,5 +1,5 @@
 
-# 🚀 Multi-threaded Server-Client Communication Project
+# Multi-threaded Server-Client Communication Project
 
 ### **Overview**
 
@@ -19,7 +19,7 @@ This project showcases a robust multi-threaded server-client communication syste
 
 ---
 
-### **📁 Project Structure**
+### Project Structure**
 
 ```
 ├── include/
@@ -36,7 +36,7 @@ This project showcases a robust multi-threaded server-client communication syste
 
 ---
 
-### **🛠️ Getting Started**
+### Getting Started**
 
 #### **Prerequisites**
 
@@ -71,7 +71,7 @@ The client connects to the server and begins communication, supporting both GET 
 
 ---
 
-### **📑 Workflow Overview**
+### Workflow Overview**
 
 #### **Server Flow**:
 1. **Startup**: Initializes a socket and listens for incoming client connections.
@@ -89,7 +89,7 @@ The client connects to the server and begins communication, supporting both GET 
 
 ---
 
-### **🔑 Key Concepts**
+### Key Concepts**
 
 - **POSIX Threads (`pthread`)**: Enables multi-threading, allowing efficient, concurrent client handling.
 - **Mutex Locks**: Used for thread-safe access to shared data, such as the ring buffer.
@@ -98,7 +98,7 @@ The client connects to the server and begins communication, supporting both GET 
 
 ---
 
-### **🚀 Skills Demonstrated**
+### Skills Demonstrated**
 
 - Advanced **C programming** with a focus on low-level systems.
 - Experience with **multi-threading** and **thread synchronization**.
@@ -108,14 +108,10 @@ The client connects to the server and begins communication, supporting both GET 
 
 ---
 
-### **🌟 Future Enhancements**
+### Future Enhancements**
 
 - **Secure Communication**: Implement SSL/TLS for encrypted data exchange.
 - **Scalability**: Enhance the server to handle higher client loads with dynamic resource allocation.
 - **Expanded API**: Add support for more request types (e.g., UPDATE, DELETE) to improve the client-server interaction model.
 
 ---
-
-### **🤝 Contributions**
-
-Contributions, issues, and feature requests are welcome! Feel free to fork this repository and submit a pull request.
